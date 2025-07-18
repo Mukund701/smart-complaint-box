@@ -1,7 +1,7 @@
 Smart Complaint Box
 A full-stack web application built with Next.js and Supabase that provides a secure and efficient platform for users to submit complaints and for administrators to manage them in real-time.
 
-[Link to Live Demo] 👈 (You will add this link after we deploy the project)
+(https://smart-complaint-lplhh4nx5-mukundsharma7380-4006s-projects.vercel.app/) 👈 (You will add this link after we deploy the project)
 
 Key Features
 This project demonstrates a wide range of modern web development features:
