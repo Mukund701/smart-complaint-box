@@ -1,11 +1,13 @@
-import { createClient } from '@supabase/supabase-js';
+import { createClient } from '@supabase/supabase-js'
 
-// Your project's specific Supabase URL and anon key
-const supabaseUrl = 'https://jsubnmdqdimuancikpmn.supabase.co';
-const supabaseAnonKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpzdWJubWRxZGltdWFuY2lrcG1uIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTI2OTY5ODEsImV4cCI6MjA2ODI3Mjk4MX0.C3HtmQq1oJlGuIvMgegci4yKd8jN2tYq62XJyNq74SU';
+// 1. Get the Supabase URL and public anon key from environment variables
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL
+const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_KEY
 
-// --- Create and export the Supabase client ---
-// This client is now connected to your project.
-// For a production application, you would store these keys in environment variables
-// for better security, but this is perfect for local development.
-export const supabase = createClient(supabaseUrl, supabaseAnonKey);
+// 2. Check if the variables are set
+if (!supabaseUrl || !supabaseAnonKey) {
+  throw new Error('Supabase URL and/or anon key are not set in .env.local')
+}
+
+// 3. Create and export the Supabase client
+export const supabase = createClient(supabaseUrl, supabaseAnonKey)
